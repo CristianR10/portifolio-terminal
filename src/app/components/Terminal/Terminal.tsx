@@ -65,7 +65,7 @@ const COMMANDS_INFO: Record<string, CommandInfo> = {
                     <strong>Habilidades:</strong> React, TypeScript, Next.js, SCSS, Node.js, VTEX, entre outras tecnologias modernas.<br />
                     <strong>Educação: Faculdade Eniac (Analise e Desenvolvimento de sistemas)</strong>
                     <strong>Experiencia: ...</strong>
-                    <strong>Motto:</strong> {"Ajudar colegas e melhorar processos é parte da missão!"} 😎
+                    <strong>Motto:</strong> Ajudar colegas e melhorar processos é parte da missão!
                 </div>
 
                 <div className={styles.informations}>
