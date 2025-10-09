@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect, JSX } from 'react'
 import styles from './Terminal.module.scss'
-import { projectGetSourceMapSync } from 'next/dist/build/swc/generated-native'
+import Image from 'next/image'
 
 interface Command {
     input: string
@@ -65,11 +65,11 @@ const COMMANDS_INFO: Record<string, CommandInfo> = {
                     <strong>Habilidades:</strong> React, TypeScript, Next.js, SCSS, Node.js, VTEX, entre outras tecnologias modernas.<br />
                     <strong>Educação: Faculdade Eniac (Analise e Desenvolvimento de sistemas)</strong>
                     <strong>Experiencia: ...</strong>
-                    <strong>Motto:</strong> "Ajudar colegas e melhorar processos é parte da missão!" 😎
+                    <strong>Motto:</strong> {"Ajudar colegas e melhorar processos é parte da missão!"} 😎
                 </div>
 
                 <div className={styles.informations}>
-                    <img
+                    <Image
                         src="/Screenshot_19.png"
                         alt="Cristian Renato - Ficha Secreta"
                         className={styles.baseImage}
