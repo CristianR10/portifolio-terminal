@@ -1,0 +1,253 @@
+:root {
+    --neon: #b8e84c;
+    --background: rgb(6, 12, 0);
+    --muted: #686868;
+    --mutedHigh: #ffffff;
+    --neontext: #e52c2c;
+
+}
+
+
+body {
+    * {
+        font-size: 0.85rem;
+    }
+}
+
+
+.header {
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        gap: 4rem;
+        width: 55%;
+        margin-right: 0;
+        margin-left: auto;
+        padding: 0.5rem 1.25rem;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0;
+            width: 100%;
+        }
+
+        .headerLink {
+            color: var(--neontext);
+            font-size: 0.85rem;
+            position: relative;
+            font-family: 'Share Tech Mono', monospace;
+
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                bottom: 0;
+                left: 0;
+                height: 1px;
+                background-color: var(--neontext);
+                transition: 0.2s all ease-in-out;
+            }
+
+            &:hover {
+                &::after {
+                    width: 100%;
+                }
+            }
+
+        }
+
+        .date {
+            color: var(--neontext);
+            font-size: 0.85rem;
+            text-transform: capitalize;
+
+            @media (max-width: 768px) {
+                text-align: center;
+                display: block;
+            }
+        }
+    }
+
+    pre {
+        font-size: 0.5rem;
+        display: flex;
+        justify-content: center;
+
+        @media (max-width: 768px) {
+            font-size: 5px;
+        }
+    }
+
+    .instructions {
+        margin-top: 0.5rem;
+        font-size: 0.75rem;
+        color: var(--muted);
+
+        span {
+            color: var(--mutedHigh);
+        }
+    }
+}
+
+
+.allProjects {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+
+    li {
+
+        a {
+            position: relative;
+
+            &::after {
+                content: '';
+                width: 0;
+                height: 1px;
+                background-color: var(--neon);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transition: 0.2s all ease-in-out;
+            }
+
+            &:hover {
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+
+}
+
+
+
+
+
+
+.terminal {
+    position: relative;
+    background: var(--background);
+    color: var(--neon);
+    font-family: 'Share Tech Mono', monospace;
+    padding: 1rem;
+    border-radius: 10px;
+    min-height: 400px;
+    overflow-y: auto;
+
+
+}
+
+.line {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+
+    .prompt {
+        color: var(--neontext);
+        margin-right: 0.5rem;
+        // animation: neonPulseText 1.5s infinite alternate;
+    }
+
+    .output {
+        color: var(--neon);
+    }
+
+    .input {
+        background: transparent;
+        border: none;
+        color: var(--neon);
+        outline: none;
+        font-family: inherit;
+        flex: 1;
+    }
+
+    .cursor {
+        display: inline-block;
+        margin-left: 2px;
+        color: var(--cursor);
+        animation: blinkCursor 1s infinite step-start;
+    }
+
+    .suggestion {
+        color: #ffffff3f;
+        margin-left: 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+.allContacts {
+    pre {
+        display: flex;
+        gap: 2rem;
+
+        span {
+            width: 94px;
+        }
+
+        a {
+            color: #686868;
+        }
+    }
+}
+
+@keyframes neonPulse {
+    0% {
+        text-shadow: 0 0 5px var(--neon), 0 0 10px var(--neon), 0 0 20px var(--neon);
+    }
+
+    50% {
+        text-shadow: 0 0 10px var(--neon), 0 0 20px var(--neon), 0 0 30px var(--neon);
+    }
+
+    100% {
+        text-shadow: 0 0 5px var(--neon), 0 0 10px var(--neon), 0 0 20px var(--neon);
+    }
+}
+
+@keyframes neonPulseText {
+    0% {
+        text-shadow: 0 0 5px var(--neontext), 0 0 10px var(--neontext), 0 0 20px var(--neontext);
+    }
+
+    50% {
+        text-shadow: 0 0 10px var(--neontext), 0 0 20px var(--neontext), 0 0 30px var(--neontext);
+    }
+
+    100% {
+        text-shadow: 0 0 5px var(--neontext), 0 0 10px var(--neontext), 0 0 20px var(--neontext);
+    }
+}
+
+
+
+@keyframes glitchMove {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(-2px, 1px);
+    }
+
+    50% {
+        transform: translate(1px, -2px);
+    }
+
+    75% {
+        transform: translate(-1px, 2px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
