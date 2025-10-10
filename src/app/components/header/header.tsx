@@ -52,7 +52,7 @@ function Header({ link, linkLabel }: HeaderProps) {
     useEffect(() => {
         const randomIndex = Math.floor(Math.random() * emojis.length)
         setEmoji(emojis[randomIndex])
-    }, [emojis])
+    }, [])
 
     // Atualiza a data/hora
     useEffect(() => {
