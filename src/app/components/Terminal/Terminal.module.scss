@@ -1,21 +1,35 @@
 :root {
-    --neon: #b8e84c;
-    --background: rgb(6, 12, 0);
+    --neon: #e0a12a;
+    --background: #140e02;
     --muted: #686868;
     --mutedHigh: #ffffff;
     --neontext: #e52c2c;
 
 }
 
+// html {
+//     overflow: hidden;
+// }
 
 body {
+
     * {
         font-size: 0.85rem;
+        font-family: 'Share Tech Mono', monospace;
     }
+
+
 }
 
 
 .header {
+    position: sticky;
+    top: 0;
+    background-color: var(--background);
+    padding-bottom: 0.5rem;
+    z-index: 2;
+    border-bottom: 1px solid #e0a12a;
+
 
     .container {
         display: flex;
@@ -36,9 +50,11 @@ body {
 
         .headerLink {
             color: var(--neontext);
+            text-shadow: 0 0 0px var(--neontext), 0 0 0px var(--neontext), 0 0 7px var(--neontext);
             font-size: 0.85rem;
             position: relative;
             font-family: 'Share Tech Mono', monospace;
+
 
 
             &::after {
@@ -49,6 +65,7 @@ body {
                 left: 0;
                 height: 1px;
                 background-color: var(--neontext);
+                text-shadow: 0 0 0px var(--neontext), 0 0 0px var(--neontext), 0 0 7px var(--neontext);
                 transition: 0.2s all ease-in-out;
             }
 
@@ -62,6 +79,7 @@ body {
 
         .date {
             color: var(--neontext);
+            text-shadow: 0 0 0px var(--neontext), 0 0 0px var(--neontext), 0 0 7px var(--neontext);
             font-size: 0.85rem;
             text-transform: capitalize;
 
@@ -73,24 +91,31 @@ body {
     }
 
     pre {
-        font-size: 0.5rem;
+        font-size: 0.3rem;
         display: flex;
         justify-content: center;
 
         @media (max-width: 768px) {
-            font-size: 5px;
+            font-size: 2px;
         }
     }
 
-    .instructions {
-        margin-top: 0.5rem;
-        font-size: 0.75rem;
-        color: var(--muted);
+    div {
+        text-shadow: 0 0 0px var(--neon), 0 0 0px var(--neon), 0 0 7px var(--neon);
 
-        span {
-            color: var(--mutedHigh);
+        .instructions {
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--muted);
+            text-shadow: 0 0 0px var(--muted), 0 0 0px var(--muted), 0 0 7px var(--muted);
+
+            span {
+                color: var(--mutedHigh);
+            }
         }
+
     }
+
 }
 
 
@@ -123,26 +148,18 @@ body {
             }
         }
     }
-
-
 }
-
-
-
-
-
 
 .terminal {
     position: relative;
-    background: var(--background);
     color: var(--neon);
-    font-family: 'Share Tech Mono', monospace;
-    padding: 1rem;
-    border-radius: 10px;
-    min-height: 400px;
-    overflow-y: auto;
-
-
+    text-shadow: 0 0 0px var(--neon), 0 0 0px var(--neon), 0 0 7px var(--neon);
+    max-height: 450px;
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    padding: 1.25rem;
+    overflow-y: auto
 }
 
 .line {
@@ -155,11 +172,13 @@ body {
     .prompt {
         color: var(--neontext);
         margin-right: 0.5rem;
-        // animation: neonPulseText 1.5s infinite alternate;
+        text-shadow: 0 0 0px var(--neontext), 0 0 0px var(--neontext), 0 0 7px var(--neontext);
+
     }
 
     .output {
         color: var(--neon);
+        text-shadow: 0 0 0px var(--neon), 0 0 0px var(--neon), 0 0 7px var(--neon);
     }
 
     .input {
@@ -169,14 +188,10 @@ body {
         outline: none;
         font-family: inherit;
         flex: 1;
+        text-shadow: 0 0 0px var(--neon), 0 0 0px var(--neon), 0 0 7px var(--neon);
     }
 
-    .cursor {
-        display: inline-block;
-        margin-left: 2px;
-        color: var(--cursor);
-        animation: blinkCursor 1s infinite step-start;
-    }
+
 
     .suggestion {
         color: #ffffff3f;
@@ -197,6 +212,65 @@ body {
         a {
             color: #686868;
         }
+    }
+}
+
+.aboutme {
+    &Container {
+        width: 100%;
+        max-width: 305px;
+        margin-top: 0.5rem;
+        border: 1px solid;
+        padding: 2px;
+
+        .baseImage {
+            object-fit: cover;
+            filter: sepia(1);
+        }
+
+        .aboutmeHeader {
+            background-color: #8d6310;
+            display: flex;
+            padding: 0.3rem;
+            justify-content: space-between;
+            margin-bottom: 2px;
+        }
+
+        .informations {
+            display: flex;
+            gap: 2px;
+
+            .contentInfoCard {
+                border: 1px solid;
+                padding: 0.5rem;
+
+            }
+        }
+
+        .footerCardAboutme {
+            border: 1px solid;
+            padding: 0.5rem;
+            margin-top: 2px;
+        }
+    }
+}
+
+.expContainerContent {
+    border: 1px solid;
+    padding: 2px;
+    margin: 0.5rem 0;
+
+    &Heaader {
+        background-color: #8d6310;
+        display: flex;
+        padding: 0.3rem;
+        gap: 1rem;
+        margin-bottom: 2px;
+    }
+
+    &Body {
+        padding: 0.3rem;
+        border: 1px solid;
     }
 }
 
@@ -225,29 +299,5 @@ body {
 
     100% {
         text-shadow: 0 0 5px var(--neontext), 0 0 10px var(--neontext), 0 0 20px var(--neontext);
-    }
-}
-
-
-
-@keyframes glitchMove {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    25% {
-        transform: translate(-2px, 1px);
-    }
-
-    50% {
-        transform: translate(1px, -2px);
-    }
-
-    75% {
-        transform: translate(-1px, 2px);
-    }
-
-    100% {
-        transform: translate(0, 0);
     }
 }

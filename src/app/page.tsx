@@ -6,7 +6,6 @@ import Terminal from "./components/Terminal/Terminal";
 export default function Home() {
   return (
     <div className={styles.container}>
-      <span className={styles.bgOverlay}></span>
       <svg style={{ display: 'none' }}>
         <defs>
           <filter id="noiseFilter">
@@ -16,7 +15,7 @@ export default function Home() {
           </filter>
         </defs>
       </svg>
-      <Header link="#" linkLabel="Document" />
+      <Header link="/curriculo.pdf" linkLabel="Document" />
       <Terminal />
       {/* <main className={styles.main}>
         <Image

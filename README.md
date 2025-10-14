@@ -39,3 +39,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 references
 https://muffinman.io/blog/css-image-glitch
 https://terminal.iabhinav.me
+https://br.pinterest.com/pin/23010648091674668/visual-search/?cropSource=5&rs=deep_linking

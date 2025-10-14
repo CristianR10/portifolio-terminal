@@ -43,45 +43,68 @@ const SOCIALMEDIA = [
     { name: 'Whatsapp', link: 'https://wa.me/5511942576338?text=Ol%C3%A1%2C%20como%20posso%20te%20ajudar%3F' },
 ]
 
-// Definição dos comandos
+const EXPS = [
+    {
+        name: 'Maeztra (2019 - 2023) - CLT ',
+        cargo: 'Desenvolvedor Jr - Desenvolvedor Pleno ',
+        responsabilidade: 'Desenvolver lojas na plataforma vtex legado e vtex IO, criação de componentes para a plataforma',
+        Tecnologias: 'Frontend: HTML5, CSS3, HandleBars, jQuery, Bootstrap, gulp, Sass, Less, React, Typescript, Javascript vanilla.',
+        ControleVersão: 'BitBucket, Gitflow'
+    },
+    {
+        name: 'FRN³ (2023 - atualmente) - CLT',
+        cargo: 'Desenvolvedor Pleno ',
+        responsabilidade: 'Desenvolver lojas na plataforma vtex IO, criação de componentes para a plataforma. Projetos no wordpress de lojas e landing pages e plugins ',
+        Tecnologias: 'Frontend: HTML5, CSS3, HandleBars, jQuery, Bootstrap, gulp, Sass, React,Typescript, Javascript vanilla, docker Backend: PHP, Nodejs',
+        ControleVersão: 'BitBucket, Gitflow, Git Lab'
+    }
+
+]
+
 const COMMANDS_INFO: Record<string, CommandInfo> = {
     aboutme: {
         description: 'Mostra informações sobre o agente secreto',
         output: (
-            <div
-                style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    gap: '1rem',
-                    alignItems: 'flex-start',
-                    marginTop: '0.5rem'
-                }}
-            >
-                <div style={{ flex: 1 }}>
-                    <span role="img" aria-label="detective">🕵️‍♂️</span> <strong>Cristian Renato</strong><br />
-                    <strong>Missão:</strong> Especialista em Front-end há 5 anos e se aventurando no Back-end, construindo experiências digitais elegantes e funcionais.<br />
-                    <strong>Experiência:</strong> Desenvolvimento de e-commerce (principalmente VTEX), Wordpress, além de projetos pessoais e experimentos criativos.<br />
-                    <strong>Perfil:</strong> Proativo, colaborativo e sempre buscando melhorar processos e elevar o nível técnico da equipe.<br />
-                    <strong>Habilidades:</strong> React, TypeScript, Next.js, SCSS, Node.js, VTEX, entre outras tecnologias modernas.<br />
-                    <strong>Educação: Faculdade Eniac (Analise e Desenvolvimento de sistemas)</strong>
-                    <strong>Experiencia: ...</strong>
-                    <strong>Motto:</strong> Ajudar colegas e melhorar processos é parte da missão!
-                </div>
-
-                <div className={styles.informations}>
-                    <Image
-                        src="/Screenshot_19.png"
-                        alt="Cristian Renato - Ficha Secreta"
-                        className={styles.baseImage}
-                    />
+            <div className={styles.aboutme}>
+                <div className={styles.aboutmeContainer}>
+                    <div className={styles.aboutmeHeader}>
+                        <div className={styles.aboutmeHeaderName}>
+                            <p>Desenvolvedor Full Stack</p>
+                            <strong>Cristian Renato</strong>
+                        </div>
+                        <div className={styles.aboutmeHeaderAcess}>
+                            <p>ACESS</p>
+                            <strong>*********</strong>
+                        </div>
+                    </div>
+                    <div className={styles.informations}>
+                        <Image
+                            src="/Screenshot_19.png"
+                            alt="Cristian Renato - Ficha Secreta"
+                            className={styles.baseImage}
+                            width={150}
+                            height={150}
+                        />
+                        <div className={styles.contentInfoCard}>
+                            <p>Faculdade Eniac - Formado 2019</p>
+                            <p>skills: 'HTML5, SASS, LESS, JS, React, TypeScript, Next.js, Node.js, VTEX, uappi, PHP'</p>
+                        </div>
+                    </div>
+                    <div className={styles.footerCardAboutme}>
+                        <p>
+                            Especialista em Front-end há 5 anos e se aventurando no Back-end, construindo experiências digitais elegantes e funcionais.
+                            Desenvolvimento de e-commerce (principalmente VTEX), Wordpress, além de projetos pessoais e experimentos criativos.
+                            meu perfil é Proativo, colaborativo e sempre buscando melhorar processos e elevar o nível técnico da equipe
+                        </p>
+                    </div>
                 </div>
             </div>
-
         )
     },
     skills: { description: 'Lista minhas skills', output: 'HTML5, SASS, LESS, JS, React, TypeScript, Next.js, Node.js, VTEX, uappi, PHP' },
     projects: {
-        description: 'Mostra meus projetos', output: (
+        description: 'Mostra meus projetos',
+        output: (
             <ul className={styles.allProjects}>
                 {PROJECTS.map((project, idx) => (
                     <li key={idx}>
@@ -97,7 +120,8 @@ const COMMANDS_INFO: Record<string, CommandInfo> = {
     clear: { description: 'Limpa o terminal' },
     commands: { description: 'Mostra os comandos com descrição' },
     social: {
-        description: 'Minhas redes Sociais', output: (
+        description: 'Minhas redes Sociais',
+        output: (
             <div className={styles.allContacts}>
                 {SOCIALMEDIA.map((social, idx) => (
                     <pre key={idx}>
@@ -109,6 +133,47 @@ const COMMANDS_INFO: Record<string, CommandInfo> = {
                 ))}
             </div>
         )
+    },
+    experiencie: {
+        description: 'Minhas Expêriencias',
+        output: (
+            <div className={styles.expContainer}>
+                {EXPS.map((exp, idexp) => (
+                    <div className={styles.expContainerContent} key={idexp}>
+                        <div className={styles.expContainerContentHeaader}>
+                            <p>
+                                {exp.name}
+                            </p>
+                            <p>
+                                Cargo: {exp.cargo}
+                            </p>
+                        </div>
+                        <div className={styles.expContainerContentBody}>
+                            <p>
+                                Responsabilidades: {exp.responsabilidade}
+                            </p>
+                            <p>
+                                Tecnologias: {exp.Tecnologias}
+                            </p>
+                            <p>
+                                Ferramenta Controle de Versões: {exp.ControleVersão}
+                            </p>
+                        </div>
+                    </div>
+
+                ))}
+                {/* <ul className={styles.allProjects}>
+                    {EXPS.map((project, idx) => (
+                        <li key={idx}>
+                            <a href={project.} target="_blank" rel="noopener noreferrer">
+                                {project.name}
+                            </a>
+                        </li>
+                    ))}
+                </ul> */}
+            </div>
+
+        )
     }
 }
 
@@ -119,13 +184,24 @@ export default function Terminal() {
     const [history, setHistory] = useState<Command[]>([])
     const [suggestion, setSuggestion] = useState<string | null>(null)
     const inputRef = useRef<HTMLInputElement>(null)
+    const terminalRef = useRef<HTMLDivElement>(null)
+    const inputContainerRef = useRef<HTMLDivElement>(null) // Referência para o container do input e sugestões
     const [historyIndex, setHistoryIndex] = useState<number | null>(null)
 
-
-    // Foco automático
+    // Foco automático ao carregar o componente
     useEffect(() => {
         inputRef.current?.focus()
-    }, [history])
+    }, []) // Array vazio para rodar apenas na montagem
+
+    // Scroll automático para o final do container, incluindo input e sugestões
+    useEffect(() => {
+        if (terminalRef.current) {
+            // Pequeno atraso para garantir que o DOM esteja renderizado
+            setTimeout(() => {
+                terminalRef.current!.scrollTop = terminalRef.current!.scrollHeight
+            }, 0)
+        }
+    }, [history, suggestion]) // Adiciona 'suggestion' como dependência para rolar quando sugestões aparecem
 
     // Sugestão dinâmica
     useEffect(() => {
@@ -210,9 +286,8 @@ export default function Terminal() {
         }
     }
 
-
     return (
-        <div className={styles.terminal} onClick={() => inputRef.current?.focus()}>
+        <div className={styles.terminal} ref={terminalRef} onClick={() => inputRef.current?.focus()}>
             {history.map((cmd, idx) => (
                 <div key={idx} className={styles.line}>
                     <span className={styles.prompt}>
@@ -223,8 +298,7 @@ export default function Terminal() {
                     </div>
                 </div>
             ))}
-
-            <div className={styles.line}>
+            <div className={styles.line} ref={inputContainerRef}>
                 <span className={styles.prompt}>
                     user@anonymous~$:
                     <input
@@ -236,7 +310,11 @@ export default function Terminal() {
                         className={styles.input}
                     />
                 </span>
-                {suggestion && <div className={styles.suggestion}>Pressione <strong>Tab</strong> para completar: {suggestion}</div>}
+                {suggestion && (
+                    <div className={styles.suggestion}>
+                        Pressione <strong>Tab</strong> para completar: {suggestion}
+                    </div>
+                )}
             </div>
         </div>
     )
