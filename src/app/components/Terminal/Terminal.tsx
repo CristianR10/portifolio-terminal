@@ -87,7 +87,7 @@ const COMMANDS_INFO: Record<string, CommandInfo> = {
                         />
                         <div className={styles.contentInfoCard}>
                             <p>Faculdade Eniac - Formado 2019</p>
-                            <p>skills: 'HTML5, SASS, LESS, JS, React, TypeScript, Next.js, Node.js, VTEX, uappi, PHP'</p>
+                            <p>skills: HTML5, SASS, LESS, JS, React, TypeScript, Next.js, Node.js, VTEX, uappi, PHP</p>
                         </div>
                     </div>
                     <div className={styles.footerCardAboutme}>
