@@ -1,10 +1,9 @@
 :root {
-    --neon: #e0a12a;
-    --background: #140e02;
-    --muted: #686868;
-    --mutedHigh: #ffffff;
-    --neontext: #e52c2c;
-
+  --neon: #e0a12a;
+  --background: #140e02;
+  --muted: #686868;
+  --mutedHigh: #ffffff;
+  --neontext: #e52c2c;
 }
 
 // html {
@@ -12,292 +11,335 @@
 // }
 
 body {
+  overflow: hidden;
 
-    * {
-        font-size: 0.85rem;
-        font-family: 'Share Tech Mono', monospace;
-    }
-
-
+  * {
+    font-size: 1.2rem;
+    font-family: "Share Tech Mono", monospace;
+  }
 }
-
 
 .header {
-    position: sticky;
-    top: 0;
-    background-color: var(--background);
-    padding-bottom: 0.5rem;
-    z-index: 2;
-    border-bottom: 1px solid #e0a12a;
+  position: sticky;
+  top: 0;
+  background-color: var(--background);
+  padding-bottom: 0.5rem;
+  z-index: 2;
+  border-bottom: 1px solid #e0a12a;  
 
+  .container {
+    display: flex;
+    gap: 4rem;
+    padding: 0.5rem 1.25rem;
+    justify-content: space-between;
 
-    .container {
-        display: flex;
-        justify-content: space-between;
-        gap: 4rem;
-        width: 55%;
-        margin-right: 0;
-        margin-left: auto;
-        padding: 0.5rem 1.25rem;
-
-        @media (max-width: 768px) {
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            margin: 0;
-            width: 100%;
-        }
-
-        .headerLink {
-            color: var(--neontext);
-            text-shadow: 0 0 0px var(--neontext), 0 0 0px var(--neontext), 0 0 7px var(--neontext);
-            font-size: 0.85rem;
-            position: relative;
-            font-family: 'Share Tech Mono', monospace;
-
-
-
-            &::after {
-                content: '';
-                position: absolute;
-                width: 0;
-                bottom: 0;
-                left: 0;
-                height: 1px;
-                background-color: var(--neontext);
-                text-shadow: 0 0 0px var(--neontext), 0 0 0px var(--neontext), 0 0 7px var(--neontext);
-                transition: 0.2s all ease-in-out;
-            }
-
-            &:hover {
-                &::after {
-                    width: 100%;
-                }
-            }
-
-        }
-
-        .date {
-            color: var(--neontext);
-            text-shadow: 0 0 0px var(--neontext), 0 0 0px var(--neontext), 0 0 7px var(--neontext);
-            font-size: 0.85rem;
-            text-transform: capitalize;
-
-            @media (max-width: 768px) {
-                text-align: center;
-                display: block;
-            }
-        }
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0;
+      width: 100%;
     }
 
-    pre {
-        font-size: 0.3rem;
-        display: flex;
-        justify-content: center;
+    .headerLink {
+      color: var(--neontext);
+      text-shadow:
+        0 0 0px var(--neontext),
+        0 0 0px var(--neontext),
+        0 0 7px var(--neontext);
+      position: relative;
+      font-family: "Share Tech Mono", monospace;
 
-        @media (max-width: 768px) {
-            font-size: 2px;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        bottom: 1;
+        left: 0;
+        height: 1px;
+        background-color: var(--neontext);
+        text-shadow:
+          0 0 0px var(--neontext),
+          0 0 0px var(--neontext),
+          0 0 7px var(--neontext);
+        transition: 0.2s all ease-in-out;
+      }
+
+      &:hover {
+        &::after {
+          width: 100%;
         }
+      }
     }
 
-    div {
-        text-shadow: 0 0 0px var(--neon), 0 0 0px var(--neon), 0 0 7px var(--neon);
+    .date {
+      color: var(--neontext);
+      text-shadow:
+        0 0 0px var(--neontext),
+        0 0 0px var(--neontext),
+        0 0 7px var(--neontext);
+      font-size: 0.85rem;
+      text-transform: capitalize;
 
-        .instructions {
-            margin-top: 0.5rem;
-            font-size: 0.75rem;
-            color: var(--muted);
-            text-shadow: 0 0 0px var(--muted), 0 0 0px var(--muted), 0 0 7px var(--muted);
-
-            span {
-                color: var(--mutedHigh);
-            }
-        }
-
+      @media (max-width: 768px) {
+        text-align: center;
+        display: block;
+      }
     }
+  }
 
+  pre {
+    font-size: 0.3rem;
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+      font-size: 2px;
+    }
+  }
+
+  div {
+    text-shadow:
+      0 0 0px var(--neon),
+      0 0 0px var(--neon),
+      0 0 7px var(--neon);
+
+    .instructions {
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-shadow:
+        0 0 0px var(--muted),
+        0 0 0px var(--muted),
+        0 0 7px var(--muted);
+
+      span {
+        color: var(--mutedHigh);
+      }
+    }
+  }
 }
 
-
 .allProjects {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
 
-    li {
+  li {
+    a {
+      position: relative;
 
-        a {
-            position: relative;
+      &::after {
+        content: "";
+        width: 0;
+        height: 1px;
+        background-color: var(--neon);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: 0.2s all ease-in-out;
+      }
 
-            &::after {
-                content: '';
-                width: 0;
-                height: 1px;
-                background-color: var(--neon);
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                transition: 0.2s all ease-in-out;
-            }
-
-            &:hover {
-                &::after {
-                    width: 100%;
-                }
-            }
+      &:hover {
+        &::after {
+          width: 100%;
         }
+      }
     }
+  }
 }
 
 .terminal {
-    position: relative;
-    color: var(--neon);
-    text-shadow: 0 0 0px var(--neon), 0 0 0px var(--neon), 0 0 7px var(--neon);
-    max-height: 450px;
-    width: 100%;
-    max-width: 1440px;
-    margin: auto;
-    padding: 1.25rem;
-    overflow-y: auto
+  position: relative;
+  color: var(--neon);
+  text-shadow:
+    0 0 0px var(--neon),
+    0 0 0px var(--neon),
+    0 0 7px var(--neon);
+  //   max-height: 450px;
+  width: 100%;
+  height: 80vh;
+  max-width: 1440px;
+  margin: 4.5rem auto auto;
+  padding: 1.25rem;
+  overflow-y: auto;  
 }
 
 .line {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0.5rem;
-    position: relative;
-    z-index: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
 
-    .prompt {
-        color: var(--neontext);
-        margin-right: 0.5rem;
-        text-shadow: 0 0 0px var(--neontext), 0 0 0px var(--neontext), 0 0 7px var(--neontext);
+  .prompt {
+    color: var(--neontext);
+    margin-right: 0.5rem;
+    text-shadow:
+      0 0 0px var(--neontext),
+      0 0 0px var(--neontext),
+      0 0 7px var(--neontext);
+  }
 
-    }
+  .output {
+    color: var(--neon);
+    text-shadow:
+      0 0 0px var(--neon),
+      0 0 0px var(--neon),
+      0 0 7px var(--neon);
+  }
 
-    .output {
-        color: var(--neon);
-        text-shadow: 0 0 0px var(--neon), 0 0 0px var(--neon), 0 0 7px var(--neon);
-    }
+  .input {
+    background: transparent;
+    border: none;
+    color: var(--neon);
+    outline: none;
+    font-family: inherit;
+    flex: 1;
+    text-shadow:
+      0 0 0px var(--neon),
+      0 0 0px var(--neon),
+      0 0 7px var(--neon);
+  }
 
-    .input {
-        background: transparent;
-        border: none;
-        color: var(--neon);
-        outline: none;
-        font-family: inherit;
-        flex: 1;
-        text-shadow: 0 0 0px var(--neon), 0 0 0px var(--neon), 0 0 7px var(--neon);
-    }
-
-
-
-    .suggestion {
-        color: #ffffff3f;
-        margin-left: 1.2rem;
-        font-size: 0.9rem;
-    }
+  .suggestion {
+    color: #ffffff3f;
+    margin-left: 1.2rem;
+    font-size: 0.9rem;
+  }
 }
 
 .allContacts {
-    pre {
-        display: flex;
-        gap: 2rem;
+  pre {
+    display: flex;
+    gap: 2rem;
 
-        span {
-            width: 94px;
-        }
-
-        a {
-            color: #686868;
-        }
+    span {
+      width: 94px;
     }
+
+    a {
+      color: #686868;
+    }
+  }
 }
 
 .aboutme {
-    &Container {
-        width: 100%;
-        max-width: 305px;
-        margin-top: 0.5rem;
-        border: 1px solid;
-        padding: 2px;
+  &Container {
+    width: 100%;
+    max-width: 30vw;
+    margin-top: 0.5rem;
+    border: 1px solid;
+    padding: 2px;
 
-        .baseImage {
-            object-fit: cover;
-            filter: sepia(1);
-        }
-
-        .aboutmeHeader {
-            background-color: #8d6310;
-            display: flex;
-            padding: 0.3rem;
-            justify-content: space-between;
-            margin-bottom: 2px;
-        }
-
-        .informations {
-            display: flex;
-            gap: 2px;
-
-            .contentInfoCard {
-                border: 1px solid;
-                padding: 0.5rem;
-
-            }
-        }
-
-        .footerCardAboutme {
-            border: 1px solid;
-            padding: 0.5rem;
-            margin-top: 2px;
-        }
+    .baseImage {
+      object-fit: cover;
+      filter: sepia(1);
     }
+
+    .aboutmeHeader {
+      background-color: #8d6310;
+      display: flex;
+      padding: 0.3rem;
+      justify-content: space-between;
+      margin-bottom: 2px;
+    }
+
+    .informations {
+      display: flex;
+      gap: 2px;
+
+      .contentInfoCard {
+        border: 1px solid;
+        padding: 0.5rem;
+      }
+    }
+
+    .footerCardAboutme {
+      border: 1px solid;
+      padding: 0.5rem;
+      margin-top: 2px;
+    }
+  }
 }
 
 .expContainerContent {
+  border: 1px solid;
+  padding: 2px;
+  margin: 0.5rem 0;
+
+  &Heaader {
+    background-color: #8d6310;
+    display: flex;
+    padding: 0.3rem;
+    gap: 1rem;
+    margin-bottom: 2px;
+  }
+
+  &Body {
+    padding: 0.3rem;
     border: 1px solid;
-    padding: 2px;
-    margin: 0.5rem 0;
-
-    &Heaader {
-        background-color: #8d6310;
-        display: flex;
-        padding: 0.3rem;
-        gap: 1rem;
-        margin-bottom: 2px;
-    }
-
-    &Body {
-        padding: 0.3rem;
-        border: 1px solid;
-    }
+  }
 }
 
 @keyframes neonPulse {
-    0% {
-        text-shadow: 0 0 5px var(--neon), 0 0 10px var(--neon), 0 0 20px var(--neon);
-    }
+  0% {
+    text-shadow:
+      0 0 5px var(--neon),
+      0 0 10px var(--neon),
+      0 0 20px var(--neon);
+  }
 
-    50% {
-        text-shadow: 0 0 10px var(--neon), 0 0 20px var(--neon), 0 0 30px var(--neon);
-    }
+  50% {
+    text-shadow:
+      0 0 10px var(--neon),
+      0 0 20px var(--neon),
+      0 0 30px var(--neon);
+  }
 
-    100% {
-        text-shadow: 0 0 5px var(--neon), 0 0 10px var(--neon), 0 0 20px var(--neon);
-    }
+  100% {
+    text-shadow:
+      0 0 5px var(--neon),
+      0 0 10px var(--neon),
+      0 0 20px var(--neon);
+  }
 }
 
 @keyframes neonPulseText {
-    0% {
-        text-shadow: 0 0 5px var(--neontext), 0 0 10px var(--neontext), 0 0 20px var(--neontext);
-    }
+  0% {
+    text-shadow:
+      0 0 5px var(--neontext),
+      0 0 10px var(--neontext),
+      0 0 20px var(--neontext);
+  }
 
-    50% {
-        text-shadow: 0 0 10px var(--neontext), 0 0 20px var(--neontext), 0 0 30px var(--neontext);
-    }
+  50% {
+    text-shadow:
+      0 0 10px var(--neontext),
+      0 0 20px var(--neontext),
+      0 0 30px var(--neontext);
+  }
 
-    100% {
-        text-shadow: 0 0 5px var(--neontext), 0 0 10px var(--neontext), 0 0 20px var(--neontext);
-    }
+  100% {
+    text-shadow:
+      0 0 5px var(--neontext),
+      0 0 10px var(--neontext),
+      0 0 20px var(--neontext);
+  }
+}
+
+.terminalWrapper {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  background: #0a0a0a; // cor de fundo escura de fallback
+}
+
+.backgroundContainer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none; // para não bloquear cliques no terminal
 }
